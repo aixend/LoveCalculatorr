@@ -55,6 +55,7 @@ class OnBoardAdapter(private val onStartClick: () -> Unit) :
         ViewHolder(binding.root) {
         fun bind(onBoard: OnBoard) {
             binding.apply {
+                onBoard.image?.let { imgBoard.setAnimation(it) }
                 imgBoard.setImageResource(onBoard.image)
                 tvTittle.text = onBoard.tittle
                 tvDescription.text = onBoard.desc
